@@ -1,0 +1,13 @@
+<div class="loading" *ngIf="success">
+    <div class="center">
+        <img src=".././assets/images/thumbsup.jpeg" height="300px" width="300px" />
+    </div>
+</div>
+<div class="loading" *ngIf="fail">
+    
+    <div class="center">
+            <p><b><i>You Fail!!! Try Again!!!</i></b></p>
+        <img src=".././assets/images/sad.jpg" height="300px" width="300px" />
+    </div>
+</div>
+<canvas id="brickCanvas" width="480" height="500" #brickCanvas></canvas>
