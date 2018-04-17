@@ -23,7 +23,7 @@ export class BrickBallComponent implements OnInit, AfterViewInit {
   paddleX;
   dx = 2;
   dy = -2;
-  game=true;fail=false;
+  game=true;fail=false;success=false;
   leftPressed = false; rightPressed = false;
   constructor(private brickService: BrickService,
               private ballService: BallService, 
@@ -71,6 +71,11 @@ export class BrickBallComponent implements OnInit, AfterViewInit {
     this.pointService.drawScore(this.ctx);
     this.pointService.drawLives(this.ctx,this.canvas);
     this.brickService.collisionDetection(this.x,this.y,this.dy);
+    if(this.brickService.success){
+      this.success = this.brickService.success
+      this.game = false;
+      return;
+    }
     if (this.x + this.dx > this.canvas.width - this.ballRadius || this.x + this.dx < this.ballRadius) {
       this.dx = -this.dx;
     }
@@ -80,9 +85,7 @@ export class BrickBallComponent implements OnInit, AfterViewInit {
       }else{
         this.pointService.decrementLives();
         if (!this.pointService.getLives()) {
-         // alert("GAME OVER");
-        // window.location.reload();
-        this.fail = true;
+         this.fail = true;
          this.game = false;
         } else {
           this.x = this.canvas.width / 2;

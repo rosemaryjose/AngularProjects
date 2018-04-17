@@ -14,22 +14,36 @@ canvas {
     width: 100%;
     top: 0;
     left: 0;
-    background-color:#66ead0;
+    background-color:#66ead00f;
     filter: alpha(opacity=60);
     opacity: 1;
     -moz-opacity: 0.8;
 }
 .center
-{
-    z-index: 1201;
+{/* 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -237px;
+    margin-top: -180px; */
+
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -241px;
+    margin-top: -249px;
+    border: 1px solid #eefcfa;
+    border-radius: 16px;
+    /* z-index: 1201;
     margin: auto;
     margin-top: 10%;
     padding : 10px;
     padding-left: 35px;
     width: 130px;
-    /*background-color: White;*/
-    /*border-radius: 10px 10px 10px 10px;*/
+    /*background-color: White;
+    /*border-radius: 10px 10px 10px 10px;
     filter: alpha(opacity=100);
-    /* opacity: 1;
-    -moz-opacity: 1;*/
+     opacity: 1;
+    -moz-opacity: 1;*/ 
 }  

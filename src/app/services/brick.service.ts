@@ -12,6 +12,7 @@ export class BrickService implements AfterViewInit {
       }
     }
   }
+  public success = false;
   public brickColumnCount = GlobalConstants.brickColumnCount;
   public brickRowCount = GlobalConstants.brickRowCount;
   public bricks = GlobalConstants.bricks;
@@ -51,8 +52,8 @@ export class BrickService implements AfterViewInit {
             this.pointService.incrementScore();
             b.status = 0;
             if (this.pointService.getScore() == this.brickRowCount * this.brickColumnCount) {
-              alert("YOU WIN, CONGRATULATIONS!");
-              window.location.reload();
+              this.success = true;
+              return;
             }
           }
         }
